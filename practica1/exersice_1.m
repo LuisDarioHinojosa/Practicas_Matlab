@@ -16,7 +16,7 @@ plot(t2,y,'r')
 format = [a,w];
 txt = sprintf(' %d * Sin( t * %d )',format);
 title('Customized Senoidal')
-xlabel('x')
+xlabel('timesteps')
 ylabel(txt)
 grid on
 
