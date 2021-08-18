@@ -25,21 +25,15 @@ s = customSin(tS-2,a,w);
 m = customSin(t/3,a,w);
 z = customSin(4-2*tZ,a,w);
 
-
-% constant $ fractional amplitude scaling 
-t1 = sprintf("%d X(t)",k);
-t2 = sprintf("%d X(t)",kf);
-
-% k constants 
 figure()
 subplot(2,2,1)
 createPlot(t,k*n,'Original','timesteps','X(t)','r')
 subplot(2,2,2)
-createPlot(t,n,'Modified','timesteps',t1,'b')
+createPlot(t,n,'Modified','timesteps','X(-t)','b')
 subplot(2,2,3)
 createPlot(t,kf*n,'Original','timesteps','X(t)','r')
 subplot(2,2,4)
-createPlot(tP,p,'Modified','timesteps',t2,'b')
+createPlot(tP,p,'Modified','timesteps','X(2t)','b')
 
 
 % points b,c
