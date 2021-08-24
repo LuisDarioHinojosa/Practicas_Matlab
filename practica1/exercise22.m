@@ -12,7 +12,7 @@ kf = kPars(2);
 tP = [-1.5 : 0.001 : 1.5 ];
 tH = [-8 : 0.001 : -2 ];
 tS = [-1 : 0.001 : 5 ];
-tM = [-9 : 0.001 : 9]
+tM = [-9 : 0.001 : 9];
 tZ = [0.5 : 0.001 : 3.5 ];
 
 
@@ -28,39 +28,40 @@ z = customSin(4-2*tZ,a,w);
 
 % constant $ fractional amplitude scaling 
 t1 = sprintf("%d X(t)",k);
-t2 = sprintf("%d X(t)",kf);
+t2 = sprintf("%.1f X(t)",kf);
+oriTitle = sprintf("Original: X(t) = %d sin(t + %d)",pars);
 
 % k constants 
 figure()
 subplot(2,2,1)
-createPlot(t,k*n,'Original','timesteps','X(t)','r')
+createPlot(t,k*n,oriTitle,'timesteps','X(t)','r')
 subplot(2,2,2)
 createPlot(t,n,'Modified','timesteps',t1,'b')
 subplot(2,2,3)
-createPlot(t,kf*n,'Original','timesteps','X(t)','r')
+createPlot(t,kf*n,oriTitle,'timesteps','X(t)','r')
 subplot(2,2,4)
-createPlot(tP,p,'Modified','timesteps',t2,'b')
+createPlot(tP,p,oriTitle,'timesteps',t2,'b')
 
 
 % points b,c
 figure()
 subplot(2,2,1)
-createPlot(t,n,'Original','timesteps','X(t)','r')
+createPlot(t,n,oriTitle,'timesteps','X(t)','r')
 subplot(2,2,2)
 createPlot(t,g,'Modified','timesteps','X(-t)','b')
 subplot(2,2,3)
-createPlot(t,n,'Original','timesteps','X(t)','r')
+createPlot(t,n,oriTitle,'timesteps','X(t)','r')
 subplot(2,2,4)
 createPlot(tP,p,'Modified','timesteps','X(2t)','b')
 
 % points d,e
 figure()
 subplot(2,2,1)
-createPlot(t,n,'Original','timesteps','X(t)','r')
+createPlot(t,n,oriTitle,'timesteps','X(t)','r')
 subplot(2,2,2)
 createPlot(tH,h,'Modified','timesteps','X(t+5)','b')
 subplot(2,2,3)
-createPlot(t,n,'Original','timesteps','X(t)','r')
+createPlot(t,n,oriTitle,'timesteps','X(t)','r')
 subplot(2,2,4)
 createPlot(tS,s,'Modified','timesteps','X(t-2)','b')
 
@@ -68,11 +69,11 @@ createPlot(tS,s,'Modified','timesteps','X(t-2)','b')
 % points f,h
 figure()
 subplot(2,2,1)
-createPlot(t,n,'Original','timesteps','X(t)','r')
+createPlot(t,n,oriTitle,'timesteps','X(t)','r')
 subplot(2,2,2)
 createPlot(tH,m,'Modified','timesteps','X(t/3)','b')
 subplot(2,2,3)
-createPlot(t,n,'Original','timesteps','X(t)','r')
+createPlot(t,n,oriTitle,'timesteps','X(t)','r')
 subplot(2,2,4)
 createPlot(tZ,z,'Modified','timesteps','X(4-2t)','b')
 
@@ -85,8 +86,8 @@ end
 
 % user input for sin parameters
 function [params] = reqParams()
-    a = input('Enter Amplitude');
-    w = input('Enter Frequency');
+    a = input('Enter Amplitude \n ');
+    w = input('Enter Frequency \n ');
     params = [a,w];
     
 end

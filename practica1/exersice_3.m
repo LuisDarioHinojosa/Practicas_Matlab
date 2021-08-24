@@ -24,7 +24,7 @@ createPlot(t,xEven,'X Even','timesteps','0.5*x(t)+0.5*x(-t)','b')
 subplot(2,2,2)
 createPlot(t,xOdd,'X Odd','timesteps','0.5*x(t)-0.5*x(-t)','r')
 subplot(2,2,3)
-createPlot(t,xSum,'X Sum','timesteps','xEven + xOdd','k')
+createPlot(t,xSum,'xEven + xOdd','timesteps','xEven + xOdd','k')
 subplot(2,2,4)
 createPlot(t,X(t),'X Normal','timesteps','x(t) = 5t^2+2t','m')
 

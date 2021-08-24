@@ -22,7 +22,7 @@ z = X(4-2*tZ);
 
 % constant $ fractional amplitude scaling 
 t1 = sprintf("%d X(t)",k);
-t2 = sprintf("%d X(t)",kf);
+t2 = sprintf("%.1f X(t)",kf);
 % points y 
 figure()
 subplot(2,2,1)
