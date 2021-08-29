@@ -93,6 +93,17 @@ x = myRecording;
 plot(F,10*log10(Pxx))
 title("Power spectral density Function")
 
+% Fast Fourier Tranform:
+Y = fft(c_ww);
+L = length(c_ww);
+
+P2 = abs(Y/L);
+P1 = P2(1:L);
+P1(2:end-1) = 2*P1(2:end-1);
+f = Fs*(1:(L));
+figure();
+plot(f,P1) 
+title("Autocorrelation Furier Transform")
 
 
 
