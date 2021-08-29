@@ -85,17 +85,13 @@ xlabel("audio values")
 ylabel("probability")
 
 
-
-% Power Spectral Density
-N = 20; % lenght of the overall fourier transform
-Ns = length(myRecording);
-psd = abs(fft(myRecording,N)).^2/Ns;
-figure();
-stem( (0:(N-1))/N,psd )
-
-
-
-
+figure()
+% Power Spectral Density (mathworks)
+Fs = 1000;
+x = myRecording;
+[Pxx,F] = periodogram(x,[],length(x),Fs);
+plot(F,10*log10(Pxx))
+title("Power spectral density Function")
 
 
 
